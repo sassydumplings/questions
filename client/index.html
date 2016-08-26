@@ -11,10 +11,22 @@
         <script src="./config/config.js"></script>
         <script src="./factories/user.js"></script>
         <script src="./factories/question.js"></script>
-        <script src="./controllers/users.js"></script>
+        <script src="./controllers/login.js"></script>
         <script src="./controllers/questions.js"></script>
     </head>
     <body>
+
+        <h3></h3>
+        <div ng-controller="loginController">
+            <form name='loginForm'>
+                  <p>Name <input type="text" ng-model="username" required></p>
+                  <p><input type='submit' value='Enter' ng-click='login(username)'></p>
+                </form>
+            <!--     <div ng-messages="loginForm.name.$error">
+                     <p ng-message="required">The player name is required.</p>
+                 </div> -->
+        </div>
+
 
         <div ng-view=""></div>
 

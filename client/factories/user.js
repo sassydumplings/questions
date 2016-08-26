@@ -4,6 +4,8 @@ qaModule.factory('UserFactory', function($http){
 	var factory = {};
 
 	factory.login = function(callback){
+
+		console.log("in the user factory on login");
 		// TODO:
 		//		1) add username to session
 		//		2) redirect to questions dashboard

@@ -1,27 +1,21 @@
-// this is our friends.js file located at /server/controllers/questions.js
-// note the immediate function and the object that is returned
+qaModule.controller('qaController', function($scope, QuestionFactory){
+	console.log('QuestionController is loaded');
 
-var mongoose = require('mongoose');
-var Question = mongoose.model('Question');
+	// this get runs everytime controller is loaded
+	// intializes the list of questions
 
-module.exports = (function(){
-	return {
-		create: function(req,res){
-			console.log(req.body.question_text);
+	QuestionFactory.get(function(data){
+		$scope.questions = data;
+	});
 
-			var question = new Question({
-				question_text: req.body.question_text,
-				question_description: req.body.question_description,
-				username: req.body.username
+	scope.create = function(){
+		QuestionFactory.create($scope.newQuestion, function(data){
+			QuestionFactory.get(function(data){
+				$scope.questions = data;
+				$scope.newQuestion = {};
 			});
-
-			question.save(function(err,data){
-				if(err){
-					console.log("Error saving question" + req.body.question_text);
-				} else {
-					res.json(data);
-				}
-			});
-		}
+		});
 	};
-})();
+
+
+});

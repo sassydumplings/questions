@@ -28,8 +28,9 @@ module.exports = (function(){
 			console.log("this is request to create: " + req.body.name);
 
 			var question =  new Question({
-				question: req.body.question_text,
-				question_description: req.body.question_description
+				question_text: req.body.question_text,
+				question_description: req.body.question_description,
+				username: req.body.username
 			});
 
 			questin.save(function(err,data){
@@ -42,3 +43,4 @@ module.exports = (function(){
 		}
 	};
 })();  // invoke the function immediately
+

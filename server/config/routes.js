@@ -5,23 +5,21 @@
 var questions = require('./../controllers/questions.js');
 
 module.exports = function(app){
+	app.get('/', function(req,res){
+		console.log('in root route');
+	});
 	app.get('/questions', function(req,res){
 
+		console.log("in the get questions route");
 		// calls backend controller method
 		// see above require .. it will call the friends.js controller
 
-		questions.index(req,res);
+		// questions.index(req,res);
 	});
 
-	app.post('/questions', function(req,res){
+	app.post('/question', function(req,res){
 		console.log("in post request: " + req.body.name);
-
 		questions.create(req,res);
-	});
-
-	app.post('/delete/:id', function(req,res){
-		console.log("in the delete route");
-		questions.delete(req,res);
 	});
 
 };
