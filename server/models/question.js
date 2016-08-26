@@ -10,8 +10,8 @@ var mongoose = require('mongoose');
 var QuestionSchema = new mongoose.Schema({
 	question_text: {type: String, required: true},
 	question_description: {type: String},
-	answers: [{type: Schema.Types.ObjectId, ref: 'Answer'}]
-}, {timestaps: false});
+	answers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Answer'}]
+}, {timestamps: true});
 
 // use the schema to create the model
 // Note that creating a model CREATES the collection in the database
