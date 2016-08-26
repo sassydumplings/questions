@@ -1,9 +1,19 @@
-// factory for the user login
+// skeleton factory for the user login
 
 qaModule.factory('UserFactory', function($http){
 	var factory = {};
 
-	var username = "";
+	factory.login = function(callback){
+		// TODO:
+		//		1) add username to session
+		//		2) redirect to questions dashboard
+	};
+
+	factory.logout = function(callback) {
+		// TODO:
+		//		1) remove username from session
+		//		2) redirect to login page
+	};
 
 	return factory;
 });

@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 var QuestionSchema = new mongoose.Schema({
 	question_text: {type: String, required: true},
 	question_description: {type: String},
+	username: {type: String, required: true},
 	answers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Answer'}]
 }, {timestamps: true});
 

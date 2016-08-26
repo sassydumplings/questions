@@ -4,6 +4,6 @@ var mongoose = require('mongoose');
 // we store a pointer to _id of the related answer
 
 var LikeSchema = new mongoose.Schema({
-	like: { type: Boolean, required: true} ,
-	answer: {type: mongoose.Schema.ObjectId, ref: 'Answer'}
+	like: { type: Boolean, required: true},
+	_answer: {type: mongoose.Schema.ObjectId, ref: 'Answer'}
     }, {timestamps: true});

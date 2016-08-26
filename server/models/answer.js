@@ -12,7 +12,8 @@ var mongoose = require('mongoose');
 var AnswerSchema = new mongoose.Schema({
 	answer_text: {type: String, minlength: 5},
 	supporting_details: {type: String},
-	question: {type: mongoose.Schema.ObjectId, ref: 'Question'},
+	username: {type: String, required: true},
+	_question: {type: mongoose.Schema.ObjectId, ref: 'Question'},
 	likes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Like'}]
 }, {timestamps: true});
 
