@@ -1,1 +1,1 @@
-var qaModule = angular.module('qaApp', ['ngRoute', 'ngMessages']);
+var qaModule = angular.module('qa_app', ['ngRoute', 'ngMessages']);
